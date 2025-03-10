@@ -3,35 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>직원 평가</title>
+    <title>직원 인사고과표</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body class="container mt-5">
-    <h2 class="mb-4">직원 평가 제출</h2>
-    
+    <h3 class="mb-4">2024년도 직원 인사고과표 제출</h3>
+    <div class="container mt-5">
+        <!-- Button to toggle collapse -->
+        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#evaluationCriteria" aria-expanded="false" aria-controls="evaluationCriteria">
+            📢평가기준 보기 / 닫기 🔂
+        </button>    
+        <!-- Collapsible content -->
+        <div class="collapse" id="evaluationCriteria">
+            <div class="modal-body mt-3">
+            <!--     <h5>| 평가기준 안내 |</h5> -->
+                <p>직원 인사고과 평가는 아래 기준에 따라 진행됩니다:</p>
+                <ul>            
+                    <li><strong>평가척도</strong>: 최고점수 A+ ~ 최하점수 E(9단계) => 전체항목 총100점 만점으로 환산 </li>
+                    <li><strong>업무 숙련도</strong>: 금융업무 및 내부시스템에 대한 이해도, 직무 전문성 및 자기개발 노력(배점 20%)</li>
+                    <li><strong>창의성과 문제 해결 능력(*하단에 사례입력 필수)</strong>: 업무개선 아이디어 및 확장성, 예상치 못한 문제 해결 능력(배점 20%)</li>
+                    <li><strong>업무 실적</strong>: 업무 목표 달성률 및 성과 기여도, 신속하고 정확한 업무처리 능력(배점 10%)</li>
+                    <li><strong>규정 및 절차 준수</strong>: 법규 및 내부규정 준수 여부, 리스크 관리 및 윤리의식(배점 10%)</li>
+                    <li><strong>고객 응대 및 서비스 마인드</strong>: 친절한 조합원(고객) 응대, 고객 만족을 위한 문제 해결 능력(배점 10%)</li>
+                    <li><strong>조직 융화 및 협업</strong>: 동료와의 협력 및 신뢰 구축, 협동조합의 가치 실현(배점 10%)</li>
+                    <li><strong>책임감 및 업무 태도</strong>: 업무 책임감 및 성실성, 능동적 업무 수행(배점 10%)</li>
+                    <li><strong>리더십 및 주도성</strong>: 업무 우선순위 설정 및 체계적 수행, 시간 내 업무 마무리(배점 10%)</li>
+                </ul>
+                <p><b>평가서를 제출하기 전에 위의 기준을 충분히 이해해 주세요.</b></p>
+            </div>
+        </div>
+    </div>
+    <hr>
     <form id="evaluationForm">
         <div class="mb-3">
-            <label for="name" class="form-label">직원 이름</label>
-            <input type="text" class="form-control" id="name" name="name" required>
+            <label for="name" class="form-label">🎉인적 사항</label>
+            <input type="text" class="form-control" id="name" placeholder="이름을 입력하세요" name="name" required>
         </div>
-        
+               
         <div class="mb-3">
-            <label for="employeeId" class="form-label">직급/직책</label>
+            <!-- <label for="employeeId" class="form-label">🚩직급/직책</label> -->
             <select class="form-select" id="employeeId" name="employeeId" required>
-                <option value="">선택</option>
+                <option value="">직급/직책 선택</option>
                 <option value="4급/상무">4급 상무</option>
                 <option value="5급/부장">5급 부장</option>
                 <option value="6급/차장">6급 차장</option>
                 <option value="6급/과장">6급 과장</option>
-              </select>
+            </select>
         </div>
 
-        <h4 class="mt-4">평가 항목</h4>
+        <h4 class="mt-4">| 평가 항목 |</h4>
 
         <div class="mb-3">
-            <label class="form-label">업무 숙련도</label>
-            <select class="form-select" name="업무 숙련도">
-                <option value="">선택</option>
+            <label class="form-label">1. 업무 숙련도[평가기준: 금융업무 및 내부시스템에 대한 이해도, 직무 전문성 및 자기개발노력]</label>
+            <select class="form-select" name="업무 숙련도" required>
+                <option value="">✔️선택</option>
                 <option>A+</option><option>A</option><option>B+</option><option>B</option>
                 <option>C+</option><option>C</option><option>D+</option><option>D</option>
                 <option>E+</option><option>E</option>
@@ -39,9 +64,9 @@
         </div>
 
         <div class="mb-3">
-            <label class="form-label">창의성과 문제 해결 능력</label>
-            <select class="form-select" name="창의성과 문제 해결 능력">
-                <option value="">선택</option>
+            <label class="form-label">2. 창의성과 문제 해결 능력[평가기준: 업무개선 아이디어 및 확장성, 예상치 못한 문제 해결능력]</label>
+            <select class="form-select" name="창의성과 문제 해결 능력" required>
+                <option value="">✔️선택</option>
                 <option>A+</option><option>A</option><option>B+</option><option>B</option>
                 <option>C+</option><option>C</option><option>D+</option><option>D</option>
                 <option>E+</option><option>E</option>
@@ -49,9 +74,9 @@
         </div>
 
         <div class="mb-3">
-            <label class="form-label">업무 실적</label>
-            <select class="form-select" name="업무 실적">
-                <option value="">선택</option>
+            <label class="form-label">3. 업무 실적[평가기준: 업무 목표 달성률 및 성과 기여도, 신속하고 정확한 업무처리 능력]</label>
+            <select class="form-select" name="업무 실적" required>
+                <option value="">✔️선택</option>
                 <option>A+</option><option>A</option><option>B+</option><option>B</option>
                 <option>C+</option><option>C</option><option>D+</option><option>D</option>
                 <option>E+</option><option>E</option>
@@ -59,9 +84,9 @@
         </div>
 
         <div class="mb-3">
-            <label class="form-label">규정 및 절차 준수</label>
-            <select class="form-select" name="규정 및 절차 준수">
-                <option value="">선택</option>
+            <label class="form-label">4. 규정 및 절차 준수[평가기준: 법규 및 내부규정 준수 여부, 리스크 관리 및 윤리의식]</label>
+            <select class="form-select" name="규정 및 절차 준수" required>
+                <option value="">✔️선택</option>
                 <option>A+</option><option>A</option><option>B+</option><option>B</option>
                 <option>C+</option><option>C</option><option>D+</option><option>D</option>
                 <option>E+</option><option>E</option>
@@ -69,9 +94,9 @@
         </div>
 
         <div class="mb-3">
-            <label class="form-label">고객 응대 및 서비스 마인드</label>
-            <select class="form-select" name="고객 응대 및 서비스 마인드">
-                <option value="">선택</option>
+            <label class="form-label">5. 고객 응대 및 서비스 마인드[평가기준: 친절한 조합원(고객)응대, 조합원(고객) 만족을 위한 문제해결 능력]</label>
+            <select class="form-select" name="고객 응대 및 서비스 마인드" required>
+                <option value="">✔️선택</option>
                 <option>A+</option><option>A</option><option>B+</option><option>B</option>
                 <option>C+</option><option>C</option><option>D+</option><option>D</option>
                 <option>E+</option><option>E</option>
@@ -79,9 +104,9 @@
         </div>
 
         <div class="mb-3">
-            <label class="form-label">조직 융화 및 협업</label>
-            <select class="form-select" name="조직 융화 및 협업">
-                <option value="">선택</option>
+            <label class="form-label">6. 조직 융화 및 협업[평가기준: 동료와의 협력 및 신뢰구축, 협동조합의 가치 실현]</label>
+            <select class="form-select" name="조직 융화 및 협업" required>
+                <option value="">✔️선택</option>
                 <option>A+</option><option>A</option><option>B+</option><option>B</option>
                 <option>C+</option><option>C</option><option>D+</option><option>D</option>
                 <option>E+</option><option>E</option>
@@ -89,9 +114,9 @@
         </div>
 
         <div class="mb-3">
-            <label class="form-label">책임감 및 업무 태도</label>
-            <select class="form-select" name="책임감 및 업무 태도">
-                <option value="">선택</option>
+            <label class="form-label">7. 책임감 및 업무 태도[평가기준: 업무 책임감 및 성실성, 능동적 업무 수행]</label>
+            <select class="form-select" name="책임감 및 업무 태도" required>
+                <option value="">✔️선택</option>
                 <option>A+</option><option>A</option><option>B+</option><option>B</option>
                 <option>C+</option><option>C</option><option>D+</option><option>D</option>
                 <option>E+</option><option>E</option>
@@ -99,42 +124,69 @@
         </div>
 
         <div class="mb-3">
-            <label class="form-label">리더십 및 주도성</label>
-            <select class="form-select" name="리더십 및 주도성">
-                <option value="">선택</option>
+            <label class="form-label">8. 리더십 및 주도성[평가기준: 업무 우선순위 설정 및 체계적 수행, 시간내 업무 마무리]</label>
+            <select class="form-select" name="리더십 및 주도성" required>
+                <option value="">✔️선택</option>
                 <option>A+</option><option>A</option><option>B+</option><option>B</option>
                 <option>C+</option><option>C</option><option>D+</option><option>D</option>
                 <option>E+</option><option>E</option>
             </select>
         </div>
-
-        <button type="submit" class="btn btn-primary">평가 제출</button>
+        <!-- 창의성과 문제 해결 능력 텍스트 입력 추가 -->
+        <div class="mb-3">
+            <label class="form-label">2-1.(본인평가)창의성과 문제 해결 능력 (업무적용 사례 입력하기)</label>
+            <div id="creativeProblemInputContainer">
+                <textarea class="form-control" name="창의성" rows="3" placeholder="창의성 업무사례를 입력하세요"></textarea>
+            </div>
+        </div>
+        
+        <div class="mb-3">
+            <label class="form-label">▶️평가자</label>
+            <select class="form-select" name="평가자" required>
+                <option value="">✔️선택</option>
+                <option>본인평가</option><option>파트장</option><option>실무책임자자</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">✔️제출하기</button>
     </form>
 
     <p id="responseMessage" class="mt-3"></p>
 
-    <script>
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+      
+     <script>
         document.getElementById("evaluationForm").addEventListener("submit", function(event) {
-            event.preventDefault();
-            
-            const formData = new FormData(event.target);
-            const data = {};
-            formData.forEach((value, key) => {
-                data[key] = value;
-            });
+    event.preventDefault();
 
-            fetch("https://script.google.com/macros/s/AKfycbxkAvg0P-WZh1HVIuQ-zK-jf4dKs2j9IwxlB1j0BAoKa7j0YItWlQIDAY-PgD_3Yh-u/exec", {
-                method: "POST",
-                mode: "no-cors",
-                body: JSON.stringify(data)
-            }).then(() => {
-                document.getElementById("responseMessage").textContent = "평가가 성공적으로 제출되었습니다!";
-                event.target.reset();
-            }).catch(error => {
-                document.getElementById("responseMessage").textContent = "제출 중 오류가 발생했습니다.";
-            });
-        });
-    </script>
-    
+    // Confirm submission
+    const isConfirmed = confirm("⚠️평가서를 제출하시겠습니까? 제출된 평가서는 취소할 수 없습니다.");
+    if (!isConfirmed) {
+        return; // Stop form submission if user cancels
+    }
+
+    const formData = new FormData(event.target);
+    const data = {};
+
+    formData.forEach((value, key) => {
+        data[key] = value; // Collect form data as key-value pairs
+    });
+
+    // Send data to Google Apps Script using fetch (with full CORS support)
+    fetch("https://script.google.com/macros/s/AKfycbxkAvg0P-WZh1HVIuQ-zK-jf4dKs2j9IwxlB1j0BAoKa7j0YItWlQIDAY-PgD_3Yh-u/exec", {
+        method: "POST",
+        body: JSON.stringify(data) // Send data as JSON
+    })
+    .then(response => response.json())
+    .then(result => {
+        alert("🎉평가서가 성공적으로 제출되었습니다.");
+        document.getElementById("responseMessage").textContent = result.message;
+    })
+    .catch(error => {
+        document.getElementById("responseMessage").textContent = "제출 중 오류가 발생했습니다.";
+    });
+});
+    </script>   
 </body>
 </html>

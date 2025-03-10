@@ -112,6 +112,8 @@
             
             const formData = new FormData(event.target);
             const data = {};
+
+            alert("🤷‍♂️근무만족도 설문이 제출됩니다.  잠시만 기다려 주세요");
             formData.forEach((value, key) => {
                 data[key] = value;
             });
@@ -121,6 +123,7 @@
                 mode: "no-cors",
                 body: JSON.stringify(data)
             }).then(() => {
+                alert('🚀근무만족도 설문이 잘 제출되었습니다.');
                 document.getElementById("satisfactionResponseMessage").textContent = "근무 만족도 조사가 성공적으로 제출되었습니다!";
                 event.target.reset();
             }).catch(error => {
